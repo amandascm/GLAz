@@ -23,6 +23,7 @@
         "prettier"
     ],
     "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
         "linebreak-style": 1,
         "react/react-in-jsx-scope": "off",
         "prettier/prettier": [
