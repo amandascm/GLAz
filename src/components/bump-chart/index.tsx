@@ -15,13 +15,13 @@ const BumpChart = (props: BumpChartProps) => {
         data={chartData}
         colors={{ scheme: 'spectral' }}
         lineWidth={3}
-        activeLineWidth={6}
+        activeLineWidth={4}
         inactiveLineWidth={3}
         inactiveOpacity={0.15}
-        pointSize={10}
-        activePointSize={16}
+        pointSize={6}
+        activePointSize={6}
         inactivePointSize={0}
-        pointColor={{ theme: 'background' }}
+        pointColor={{ from: 'serie.color', modifiers: [] }}
         pointBorderWidth={3}
         activePointBorderWidth={3}
         pointBorderColor={{ from: 'serie.color' }}
