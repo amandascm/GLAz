@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+.Home {
+  display: block;
 }
 
-.App-logo {
-  height: 40vmin;
+.presentation {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+}
+
+.presentation-button-div {
+  margin: 40px;
+}
+
+.logo {
+  max-height: 15%;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#GLAz {
+  animation: GLAz__rotation__1 301ms 0ms ease-in-out forwards, GLAz__rotation__2 403ms 301ms ease-in-out forwards, GLAz__rotation__3 299ms 704ms ease-in-out forwards, GLAz__height__1 500ms 0ms linear forwards, GLAz__height__2 503ms 500ms linear forwards;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes GLAz__rotation__1 {
   from {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
+
   to {
-    transform: rotate(360deg);
+      transform: rotate(-5deg);
+  }
+}
+@keyframes GLAz__rotation__2 {
+  from {
+      transform: rotate(-5deg);
+  }
+
+  to {
+      transform: rotate(3deg);
+  }
+}
+@keyframes GLAz__rotation__3 {
+  from {
+      transform: rotate(3deg);
+  }
+
+  to {
+      transform: rotate(0deg);
+  }
+}
+@keyframes GLAz__height__1 {
+  from {
+      height: 80%;
+  }
+
+  to {
+      height: 100%;
+  }
+}
+@keyframes GLAz__height__2 {
+  from {
+      height: 100%;
+  }
+
+  to {
+      height: 80%;
   }
 }
