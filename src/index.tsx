@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import Home from './pages/home';
+import Visualizations from './pages/visualizations';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +12,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/vis" element={<Visualizations />} />
     </Routes>
   </BrowserRouter>
 );

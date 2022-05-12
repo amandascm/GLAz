@@ -3,6 +3,9 @@ export interface LinkInterface {
   to: string;
 }
 
-const pages: LinkInterface[] = [{ name: 'Home', to: '/' }];
+const pages: LinkInterface[] = [
+  { name: 'Home', to: '/' },
+  { name: 'Visualizations', to: '/vis' }
+];
 
 export default pages;

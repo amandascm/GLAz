@@ -5,6 +5,7 @@ import pages from '../../utils/links';
 import Button from 'react-bootstrap//Button';
 
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -15,7 +16,9 @@ function Home() {
           <img src={logo} className="logo" id="GLAz" alt="logo" />
           <h1>A GitHub Languages Analyzer.</h1>
           <div className="presentation-button-div">
-            <Button variant="dark">Visualizations</Button>
+            <Link to={'/vis'}>
+              <Button variant="dark">Visualizations</Button>
+            </Link>
           </div>
         </div>
       </section>
