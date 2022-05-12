@@ -1,0 +1,13 @@
+.image-card-container {
+    margin: 20px;
+    height: 100%;
+}
+
+.image-card-container:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card{
+    height: 100%; 
+}

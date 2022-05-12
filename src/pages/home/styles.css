@@ -7,15 +7,21 @@
   height: 100vh;
   flex-direction: column;
   align-items: center;
-  margin: 40px;
+  padding: 40px;
 }
 
-.presentation-button-div {
-  margin: 40px;
+.presentation-cards {
+  height: max-content;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .logo {
-  max-height: 15%;
+  max-height: 200px;
   pointer-events: none;
 }
 
