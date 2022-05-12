@@ -2,10 +2,14 @@ import BumpChart from '../../components/bump-chart';
 import * as d3 from 'd3';
 import { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import RangeSlider from '../../components/range-slider';
 
 const COMMIT_INDEX = 0;
 const PRS_INDEX = 1;
 const REPO_INDEX = 2;
+
+const MIN_YEAR = 2011;
+const MAX_YEAR = 2022;
 
 const chartContainer = {
   width: '100vh',
@@ -23,6 +27,8 @@ export interface ChartData {
 const LangRanking = () => {
   const [rankData, setRankData] = useState<ChartData[]>([] as ChartData[]);
   const [index, setIndex] = useState(0);
+  const [min, setMin] = useState(MIN_YEAR);
+  const [max, setMax] = useState(MAX_YEAR);
   const rankDict = {};
 
   const handleSelect = (selectedIndex: number) => {
@@ -44,6 +50,10 @@ const LangRanking = () => {
   };
 
   useEffect(() => console.log('entrei'), [rankData]);
+  useEffect(() => {
+    console.log(min, max);
+    handleSelect(index);
+  }, [min, max]);
   useEffect(() => init(), []);
 
   function init() {
@@ -77,6 +87,11 @@ const LangRanking = () => {
           filteredRanks.push({ id: key, data: value as any });
       }
       filteredRanks.map((language) => language.data.sort((a, b) => a.x - b.x));
+      filteredRanks.map((language) => {
+        language.data = language.data.filter(
+          (dataPoint) => dataPoint.x >= min && dataPoint.x <= max
+        );
+      });
       console.log(filteredRanks);
       setRankData(filteredRanks);
     });
@@ -85,7 +100,14 @@ const LangRanking = () => {
   return (
     <>
       <h2>Languages Ranking</h2>
-      <div style={{ width: '120vh' }}>
+      <p>
+        A ranking of programming languages according to number of <b>commits</b>,{' '}
+        <b>pull requests</b> and <b>repositories</b> along time.
+      </p>
+      <div
+        style={{
+          width: '120vh'
+        }}>
         <Carousel variant="dark" interval={null} activeIndex={index} onSelect={handleSelect}>
           <Carousel.Item>
             <div
@@ -127,6 +149,23 @@ const LangRanking = () => {
             </div>
           </Carousel.Item>
         </Carousel>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: '-10px'
+          }}>
+          <RangeSlider
+            min={MIN_YEAR}
+            max={MAX_YEAR}
+            onChange={({ min, max }) => {
+              setMin(min);
+              setMax(max);
+            }}
+          />
+        </div>
       </div>
     </>
   );
