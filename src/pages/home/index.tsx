@@ -19,7 +19,6 @@ function Home() {
       imgSrc: '/assets/report.svg'
     }
   ];
-  console.log(cards);
   return (
     <div className="Home">
       <Navbar links={pages} />

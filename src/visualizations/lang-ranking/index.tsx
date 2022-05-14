@@ -52,7 +52,6 @@ const LangRanking = () => {
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   useEffect(() => {}, [rankData]);
   useEffect(() => {
-    console.log(min, max);
     handleSelect(index);
   }, [min, max]);
   useEffect(() => init(), []);
