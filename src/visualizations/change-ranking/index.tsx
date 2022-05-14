@@ -22,11 +22,6 @@ interface QoQData {
   change: number;
 }
 
-interface ChartData {
-  language_name: string;
-  change: number;
-}
-
 interface SortProps {
   sortField: string;
   sortOrder: 'asc' | 'desc';
@@ -148,7 +143,7 @@ const ChangeRanking = () => {
       label: '# Ranking',
       accessor: '',
       sortable: false,
-      formatter: (index: number, data: any) => index + 1
+      formatter: (index: number) => index + 1
     },
     { label: 'Language', accessor: 'language_name', sortable: false },
     {
