@@ -201,12 +201,16 @@ const ChangeRanking = () => {
     <>
       <div
         style={{
-          marginTop: '50px'
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          padding: '20px'
         }}>
         <h2>Change Ranking</h2>
         <p>
-          A ranking table of programming languages according the YoY Change for <b>commits</b>,{' '}
-          <b>pull requests</b> and <b>repositories</b>.
+          A ranking table and a bar chart of programming languages according to the YoY Change for{' '}
+          <b>commits</b>, <b>pull requests</b> and <b>repositories</b>.
         </p>
         <div
           style={{
@@ -271,7 +275,11 @@ const ChangeRanking = () => {
             display: 'grid',
             gridTemplateColumns: '1fr 1fr'
           }}>
-          <div className="table_container">
+          <div
+            className="table_container"
+            style={{
+              padding: '20px'
+            }}>
             <table className="table">
               <TableHead
                 {...{ columns: columnsYoY, handleSorting, defaultSortField: 'yoy_change' }}
@@ -283,7 +291,8 @@ const ChangeRanking = () => {
             style={{
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center'
+              alignItems: 'center',
+              padding: '20px'
             }}>
             <Bar
               width={700}
