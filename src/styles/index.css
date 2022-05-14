@@ -11,3 +11,70 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* 
+=================
+Table
+=====================
+*/
+
+.table_container {
+  max-width: 50%;
+  /* max-height: 500px; */
+  margin-left: 0;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+caption {
+  font-style: italic;
+  font-size: 90%;
+  margin-bottom: 10px;
+}
+
+.table th {
+  background: #fff;
+  padding: 8px 10px;
+  border-bottom: 1px solid #1a1a1a;
+  font-weight: bold;
+  text-align: left;
+}
+
+.table th.up {
+  background-image: url("../../public/assets/up_arrow.png");
+}
+.table th.down {
+  background-image: url("../../public/assets/down_arrow.png");
+}
+.table th.default {
+  background-image: url("../../public/assets/default.png");
+}
+th.up,
+th.default,
+th.down {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.table td {
+  border-top: 1px solid #ddd;
+  padding: 8px 20px;
+}
+
+.table tbody tr:first-child td {
+  border-top: none;
+}
+
+.table tbody tr:nth-child(n) td {
+  background: #eff0f0;
+}
+
+.table tbody tr:nth-child(2n) td {
+  background: #fff;
+}
+
