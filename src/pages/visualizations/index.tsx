@@ -1,4 +1,4 @@
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/navbar';
 import pages from '../../utils/links';
 import ChangeRanking from '../../visualizations/change-ranking';
 import LangRanking from '../../visualizations/lang-ranking';
