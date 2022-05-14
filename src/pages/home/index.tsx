@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/navbar';
 import pages from '../../utils/links';
 import './styles.css';
 import ImageCard from '../../components/image-card';
@@ -19,7 +19,6 @@ function Home() {
       imgSrc: '/assets/report.svg'
     }
   ];
-  console.log(cards);
   return (
     <div className="Home">
       <Navbar links={pages} />

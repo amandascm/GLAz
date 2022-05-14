@@ -12,7 +12,7 @@ const MIN_YEAR = 2011;
 const MAX_YEAR = 2022;
 
 const chartContainer = {
-  width: '100vh',
+  width: '70vw',
   height: '50vh'
 };
 
@@ -49,9 +49,9 @@ const LangRanking = () => {
     }
   };
 
-  useEffect(() => console.log('entrei'), [rankData]);
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  useEffect(() => {}, [rankData]);
   useEffect(() => {
-    console.log(min, max);
     handleSelect(index);
   }, [min, max]);
   useEffect(() => init(), []);
@@ -92,13 +92,19 @@ const LangRanking = () => {
           (dataPoint) => dataPoint.x >= min && dataPoint.x <= max
         );
       });
-      console.log(filteredRanks);
       setRankData(filteredRanks);
     });
   }
 
   return (
-    <>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+        padding: '20px'
+      }}>
       <h2>Languages Ranking</h2>
       <p>
         A ranking of programming languages according to number of <b>commits</b>,{' '}
@@ -106,7 +112,7 @@ const LangRanking = () => {
       </p>
       <div
         style={{
-          width: '120vh'
+          width: '90vw'
         }}>
         <Carousel variant="dark" interval={null} activeIndex={index} onSelect={handleSelect}>
           <Carousel.Item>
@@ -167,7 +173,7 @@ const LangRanking = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
