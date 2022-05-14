@@ -133,7 +133,8 @@ const ChangeRanking = () => {
   }
 
   const formatYoYChange = (index: number, data: any) => {
-    return '+' + (data * 100).toLocaleString('en-us', { maximumFractionDigits: 2 }) + '%';
+    const displayValue = (data * 100).toLocaleString('en-us', { maximumFractionDigits: 2 }) + '%';
+    return data > 0 ? '+' + displayValue : displayValue;
   };
 
   const yoyStyles = (data: any) => {
