@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import TableBody from '../../components/sortable-table/body';
 import TableHead from '../../components/sortable-table/head';
 import Select from 'react-select';
+import { Bar } from '@nivo/bar';
 
 interface YoYData {
   language_name: string;
@@ -18,6 +19,11 @@ interface QoQData {
   quarter: number;
   count: number;
   lag_count?: number;
+  change: number;
+}
+
+interface ChartData {
+  language_name: string;
   change: number;
 }
 
@@ -127,7 +133,7 @@ const ChangeRanking = () => {
   }
 
   const formatYoYChange = (index: number, data: any) => {
-    return (data * 100).toLocaleString('en-us', { maximumFractionDigits: 2 }) + '%';
+    return '+' + (data * 100).toLocaleString('en-us', { maximumFractionDigits: 2 }) + '%';
   };
 
   const yoyStyles = (data: any) => {
@@ -165,6 +171,33 @@ const ChangeRanking = () => {
       });
       setTableData(data.slice(0, top));
       setSortActive({ sortField: sortField, sortOrder: sortOrder });
+    }
+  };
+
+  // Chart params
+  const theme = {
+    background: '#222222',
+    axis: {
+      fontSize: '14px',
+      tickColor: '#eee',
+      ticks: {
+        line: {
+          stroke: '#555555'
+        },
+        text: {
+          fill: '#ffffff'
+        }
+      },
+      legend: {
+        text: {
+          fill: '#aaaaaa'
+        }
+      }
+    },
+    grid: {
+      line: {
+        stroke: '#555555'
+      }
     }
   };
 
@@ -237,13 +270,60 @@ const ChangeRanking = () => {
             options={datasetSelectOptions}
           />
         </div>
-        <div className="table_container">
-          <table className="table">
-            <TableHead
-              {...{ columns: columnsYoY, handleSorting, defaultSortField: 'yoy_change' }}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr'
+          }}>
+          <div className="table_container">
+            <table className="table">
+              <TableHead
+                {...{ columns: columnsYoY, handleSorting, defaultSortField: 'yoy_change' }}
+              />
+              <TableBody {...{ columns: columnsYoY, tableData }} />
+            </table>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}>
+            <Bar
+              width={700}
+              height={400}
+              margin={{ top: 40, right: 80, bottom: 100, left: 80 }}
+              data={tableData as any[]}
+              padding={0.2}
+              keys={['change']}
+              indexBy="language_name"
+              valueFormat=" >+p"
+              colors={{ scheme: 'spectral' }}
+              enableLabel={false}
+              labelTextColor="inherit:darker(2.4)"
+              labelSkipWidth={8}
+              labelSkipHeight={8}
+              enableGridX={false}
+              colorBy={'indexValue'}
+              axisBottom={{
+                tickSize: 5,
+                tickPadding: 5,
+                tickRotation: -90,
+                legend: 'Language',
+                legendPosition: 'middle',
+                legendOffset: 80
+              }}
+              axisLeft={{
+                tickSize: 5,
+                tickPadding: 5,
+                tickRotation: 0,
+                legend: 'YoY Change',
+                legendPosition: 'middle',
+                legendOffset: -50
+              }}
+              theme={theme}
             />
-            <TableBody {...{ columns: columnsYoY, tableData }} />
-          </table>
+          </div>
         </div>
       </div>
     </>

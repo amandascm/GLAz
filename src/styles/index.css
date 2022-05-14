@@ -19,7 +19,7 @@ Table
 */
 
 .table_container {
-  max-width: 50%;
+  max-width: 100%;
   /* max-height: 500px; */
   margin-left: 0;
   overflow: auto;
