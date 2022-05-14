@@ -1,4 +1,3 @@
-import Form from 'react-bootstrap/Form';
 import RangeSlider from 'react-bootstrap-range-slider';
 
 const Slider = (props: any) => {
