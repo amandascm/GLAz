@@ -3,7 +3,6 @@ import Plot from 'react-plotly.js';
 import * as d3 from 'd3';
 import { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
-import RangeSlider from '../../components/range-slider';
 
 interface ChartData {
   x: string[];
@@ -19,29 +18,31 @@ const REPO_INDEX = 2;
 
 const LineCharts = () => {
   const [seriesData, setSeriesData] = useState<ChartData[]>([] as ChartData[]);
+  const [eventData, setEventData] = useState<ChartData[]>([] as ChartData[]);
   const [index, setIndex] = useState(0);
 
   useEffect(() => init(), []);
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  useEffect(() => {}, [seriesData]);
+  useEffect(() => {}, [seriesData, eventData]);
 
   function init() {
     setIndex(0);
-    updateDataSource('./data/commits.csv', 'commit_count');
+    updateCarouselDataSource('./data/commits.csv', 'commit_count');
+    updateEventDataSource();
   }
 
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
     switch (selectedIndex) {
       case PRS_INDEX:
-        updateDataSource('./data/prs.csv', 'pr_count');
+        updateCarouselDataSource('./data/prs.csv', 'pr_count');
         break;
       case REPO_INDEX:
-        updateDataSource('./data/repos.csv', 'repos_count');
+        updateCarouselDataSource('./data/repos.csv', 'repos_count');
         break;
       case COMMIT_INDEX:
       default:
-        updateDataSource('./data/commits.csv', 'commit_count');
+        updateCarouselDataSource('./data/commits.csv', 'commit_count');
         break;
     }
   };
@@ -63,7 +64,7 @@ const LineCharts = () => {
     }, {});
   };
 
-  function updateDataSource(path: string, countCol: string) {
+  function updateCarouselDataSource(path: string, countCol: string) {
     const quarters = Array.from({ length: 4 }, (_, i) => i + 1).sort();
     const years = Array.from({ length: 10 }, (_, i) => i + 2012).sort();
     const cartesian = (...a: any[]) =>
@@ -89,7 +90,6 @@ const LineCharts = () => {
         return a.quarter[0] - b.quarter[0];
       });
       processedData = groupBy(processedData, 'language_name');
-      console.log(processedData);
       const plotData = Object.keys(processedData)
         .map((language) => {
           const x = (processedData as any)[language].quarter.map(
@@ -111,6 +111,53 @@ const LineCharts = () => {
     });
   }
 
+  function updateEventDataSource() {
+    const quarters = Array.from({ length: 4 }, (_, i) => i + 1).sort();
+    const years = Array.from({ length: 10 }, (_, i) => i + 2012).sort();
+    const cartesian = (...a: any[]) =>
+      a.reduce((a, b) => a.flatMap((d: any) => b.map((e: any) => [d, e].flat())));
+    let yearsQuarters = cartesian(years, quarters);
+    function sliderLabel(val: number) {
+      return `Q${yearsQuarters[val][1]}/${yearsQuarters[val][0]}`;
+    }
+    yearsQuarters = yearsQuarters.map((v: number, index: number) => sliderLabel(index));
+
+    d3.csv('./data/events_normalized.csv').then((data: any[]) => {
+      let processedData = data.map((each) => {
+        return {
+          event_name: each.event,
+          count: [+each.count],
+          year: [+each.year],
+          quarter: [+each.quarter]
+        };
+      });
+      processedData.sort((a, b) => {
+        const v = a.year[0] - b.year[0];
+        if (v !== 0) return v;
+        return a.quarter[0] - b.quarter[0];
+      });
+      processedData = groupBy(processedData, 'event_name');
+      console.log(processedData);
+      const plotData = Object.keys(processedData).map((event) => {
+        const x = (processedData as any)[event].quarter.map(
+          (q: any, index: any) => `Q${q}/${(processedData as any)[event].year[index]}`
+        );
+        const difference = yearsQuarters.filter((item: any) => !x.includes(item));
+        const zeroPadding = difference.map(() => null);
+        return {
+          x: difference.concat(x),
+          y: zeroPadding.concat((processedData as any)[event].count),
+          name: (processedData as any)[event].event_name,
+          mode: 'lines',
+          type: 'scatter'
+        } as ChartData;
+      });
+      console.log(plotData);
+
+      setEventData(plotData);
+    });
+  }
+
   return (
     <div
       style={{
@@ -127,49 +174,63 @@ const LineCharts = () => {
       </p>
       <div
         style={{
-          width: '90vw'
+          display: 'grid',
+          gridTemplateColumns: '2fr 1fr'
         }}>
-        <Carousel variant="dark" interval={null} activeIndex={index} onSelect={handleSelect}>
-          <Carousel.Item>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexDirection: 'column',
-                paddingBottom: '25px'
-              }}>
-              <h3>Commits</h3>
-              <Plot data={seriesData} layout={{ width: 1000, height: 500 }} />
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexDirection: 'column',
-                paddingBottom: '25px'
-              }}>
-              <h3>PRs</h3>
-              <Plot data={seriesData} layout={{ width: 1000, height: 500 }} />
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexDirection: 'column',
-                paddingBottom: '25px'
-              }}>
-              <h3>Repos</h3>
-              <Plot data={seriesData} layout={{ width: 1000, height: 500 }} />
-            </div>
-          </Carousel.Item>
-        </Carousel>
+        <div>
+          <Carousel variant="dark" interval={null} activeIndex={index} onSelect={handleSelect}>
+            <Carousel.Item>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  paddingBottom: '25px'
+                }}>
+                <h3>Commits</h3>
+                <Plot data={seriesData} layout={{ width: 750, height: 500 }} />
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  paddingBottom: '25px'
+                }}>
+                <h3>PRs</h3>
+                <Plot data={seriesData} layout={{ width: 750, height: 500 }} />
+              </div>
+            </Carousel.Item>
+            <Carousel.Item>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flexDirection: 'column',
+                  paddingBottom: '25px'
+                }}>
+                <h3>Repos</h3>
+                <Plot data={seriesData} layout={{ width: 750, height: 500 }} />
+              </div>
+            </Carousel.Item>
+          </Carousel>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+            paddingBottom: '25px'
+          }}>
+          <h3>Events</h3>
+          <Plot data={eventData} layout={{ width: 600, height: 500 }} />
+        </div>
       </div>
     </div>
   );
