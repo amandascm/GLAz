@@ -7,6 +7,32 @@ interface BumpChartProps {
   styles?: any;
 }
 
+const theme = {
+  background: '#222222',
+  axis: {
+    fontSize: '14px',
+    tickColor: '#eee',
+    ticks: {
+      line: {
+        stroke: '#555555'
+      },
+      text: {
+        fill: '#ffffff'
+      }
+    },
+    legend: {
+      text: {
+        fill: '#aaaaaa'
+      }
+    }
+  },
+  grid: {
+    line: {
+      stroke: '#555555'
+    }
+  }
+};
+
 const BumpChart = (props: BumpChartProps) => {
   const chartData: any = props?.data ?? data;
   return (
@@ -51,6 +77,7 @@ const BumpChart = (props: BumpChartProps) => {
         }}
         margin={{ top: 40, right: 100, bottom: 40, left: 60 }}
         axisRight={null}
+        theme={theme}
       />
     </div>
   );
