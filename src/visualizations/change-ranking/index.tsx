@@ -223,7 +223,7 @@ const ChangeRanking = () => {
         </p>
         <div
           style={{
-            width: '60%',
+            width: '70%',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -289,8 +289,10 @@ const ChangeRanking = () => {
         </div>
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr'
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap'
           }}>
           <div
             className="table_container"
