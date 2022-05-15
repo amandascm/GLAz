@@ -3,6 +3,7 @@ import Plot from 'react-plotly.js';
 import * as d3 from 'd3';
 import { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import RangeSlider from '../../components/range-slider';
 
 interface ChartData {
   x: string[];
@@ -63,6 +64,16 @@ const LineCharts = () => {
   };
 
   function updateDataSource(path: string, countCol: string) {
+    const quarters = Array.from({ length: 4 }, (_, i) => i + 1).sort();
+    const years = Array.from({ length: 10 }, (_, i) => i + 2012).sort();
+    const cartesian = (...a: any[]) =>
+      a.reduce((a, b) => a.flatMap((d: any) => b.map((e: any) => [d, e].flat())));
+    let yearsQuarters = cartesian(years, quarters);
+    function sliderLabel(val: number) {
+      return `Q${yearsQuarters[val][1]}/${yearsQuarters[val][0]}`;
+    }
+    yearsQuarters = yearsQuarters.map((v: number, index: number) => sliderLabel(index));
+
     d3.csv(path).then((data: any[]) => {
       let processedData = data.map((each) => {
         return {
@@ -81,17 +92,21 @@ const LineCharts = () => {
       console.log(processedData);
       const plotData = Object.keys(processedData)
         .map((language) => {
+          const x = (processedData as any)[language].quarter.map(
+            (q: any, index: any) => `Q${q}/${(processedData as any)[language].year[index]}`
+          );
+          const difference = yearsQuarters.filter((item: any) => !x.includes(item));
+          const zeroPadding = difference.map(() => null);
           return {
-            x: (processedData as any)[language].quarter.map(
-              (q: any, index: any) => `Q${q}/${(processedData as any)[language].year[index]}`
-            ),
-            y: (processedData as any)[language].count,
+            x: difference.concat(x),
+            y: zeroPadding.concat((processedData as any)[language].count),
             name: (processedData as any)[language].language_name,
             mode: 'lines',
             type: 'scatter'
           } as ChartData;
         })
         .sort((a, b) => b.y[b.y.length - 1] - a.y[a.y.length - 1]);
+
       setSeriesData(plotData.slice(0, 10));
     });
   }
