@@ -4,6 +4,7 @@ import TableBody from '../../components/sortable-table/body';
 import TableHead from '../../components/sortable-table/head';
 import Select from 'react-select';
 import { Bar } from '@nivo/bar';
+import Slider from '../../components/slider';
 
 interface YoYData {
   language_name: string;
@@ -38,11 +39,12 @@ const ChangeRanking = () => {
     sortField: 'change',
     sortOrder: 'desc'
   });
+  const [minimumCount, setMinCount] = useState<number>(1000);
 
   useEffect(() => updateTable(), []);
   useEffect(() => {
     updateTable();
-  }, [year, quarter, event]);
+  }, [year, quarter, event, minimumCount]);
 
   const updateTable = () => {
     if (quarter === null) updateYoYDataSource(`./data/yoy_change${event}`);
@@ -86,7 +88,7 @@ const ChangeRanking = () => {
           year: +d.year
         } as YoYData;
       });
-      newData = newData.filter((d) => d.year == year);
+      newData = newData.filter((d) => d.year == year && d.count > minimumCount);
       newData.sort((a, b) => {
         if ((a as any)[sortActive.sortField] === null) return 1;
         if ((b as any)[sortActive.sortField] === null) return -1;
@@ -112,7 +114,9 @@ const ChangeRanking = () => {
           quarter: +d.quarter
         } as QoQData;
       });
-      newData = newData.filter((d) => d.year == year && d.quarter == quarter);
+      newData = newData.filter(
+        (d) => d.year == year && d.quarter == quarter && d.count > minimumCount
+      );
       newData.sort((a, b) => {
         if ((a as any)[sortActive.sortField] === null) return 1;
         if ((b as any)[sortActive.sortField] === null) return -1;
@@ -170,6 +174,11 @@ const ChangeRanking = () => {
     }
   };
 
+  const sliderOnChange = (event: any) => {
+    const value = event.target.value;
+    setMinCount(value);
+  };
+
   // Chart params
   const theme = {
     background: '#222222',
@@ -207,14 +216,14 @@ const ChangeRanking = () => {
           textAlign: 'center',
           padding: '20px'
         }}>
-        <h2>Change Ranking</h2>
+        <h2>YoY Change Ranking</h2>
         <p>
           A ranking table and a bar chart of programming languages according to the YoY Change for{' '}
           <b>commits</b>, <b>pull requests</b> and <b>repositories</b>.
         </p>
         <div
           style={{
-            width: '35%',
+            width: '60%',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -269,6 +278,14 @@ const ChangeRanking = () => {
             name="event"
             options={datasetSelectOptions}
           />
+          <p style={{ paddingRight: '10px', verticalAlign: 'middle' }}>Minimum count</p>
+          <Slider
+            width={'300px'}
+            minValue={0}
+            maxValue={100000}
+            value={minimumCount}
+            label={(val: number) => String(val)}
+            onChange={sliderOnChange}></Slider>
         </div>
         <div
           style={{
