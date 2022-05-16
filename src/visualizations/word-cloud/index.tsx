@@ -21,6 +21,7 @@ export interface ChartData {
   data: {
     x: number;
     y: number | null | any;
+    occ: number;
   }[];
 }
 
@@ -31,7 +32,6 @@ const WordCloud = () => {
   const [index, setIndex] = useState(0);
   const [min, setMin] = useState(MIN_YEAR);
   const [max, setMax] = useState(MAX_YEAR);
-  const rankDict = {};
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const languagesData = require('./data/languages_data.json');
   const [totalWords, setTotalWords] = useState<number[]>([]);
@@ -39,7 +39,10 @@ const WordCloud = () => {
 
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
-    switch (selectedIndex) {
+  };
+
+  useEffect(() => {
+    switch (index) {
       case COMMIT_INDEX:
         updateDataSource('./data/commits.csv');
         break;
@@ -53,12 +56,27 @@ const WordCloud = () => {
         updateDataSource('./data/commits.csv');
         break;
     }
-  };
+  }, [index]);
+
+  const indexEventMapper = ['commit_count', 'pr_count', 'repos_count'];
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   useEffect(() => {}, [langData]);
   useEffect(() => {
-    handleSelect(index);
+    switch (index) {
+      case COMMIT_INDEX:
+        updateDataSource('./data/commits.csv');
+        break;
+      case PRS_INDEX:
+        updateDataSource('./data/prs.csv');
+        break;
+      case REPO_INDEX:
+        updateDataSource('./data/repos.csv');
+        break;
+      default:
+        updateDataSource('./data/commits.csv');
+        break;
+    }
   }, [min, max]);
   useEffect(() => init(), []);
 
@@ -68,6 +86,7 @@ const WordCloud = () => {
   }
 
   function updateDataSource(path: string) {
+    const rankDict = {};
     d3.csv(path).then((data: any) => {
       data.map((d: any) => {
         const key: string = d.language_name;
@@ -76,13 +95,22 @@ const WordCloud = () => {
           (rankDict as any)[key] = [
             {
               x: +d.year,
-              y: +d.year_rank > 20 ? null : +d.year_rank
+              y: +d.year_rank > 20 ? null : +d.year_rank,
+              occ: +d[indexEventMapper[index]] ?? 0
             }
           ];
         } else if (!(dataArray.filter((register: any) => register.x === +d.year).length > 0)) {
           dataArray.push({
             x: +d.year,
-            y: +d.year_rank > 20 ? null : +d.year_rank
+            y: +d.year_rank > 20 ? null : +d.year_rank,
+            occ: +d[indexEventMapper[index]] ?? 0
+          });
+        } else if (dataArray.filter((register: any) => register.x === +d.year).length > 0) {
+          const year_index = dataArray.map((obj: any) => obj.x).indexOf(+d.year);
+          dataArray.splice(year_index, 1, {
+            x: dataArray[year_index].x,
+            y: dataArray[year_index].y,
+            occ: dataArray[year_index].occ + (+d[indexEventMapper[index]] ?? 0)
           });
         }
       });
@@ -98,13 +126,12 @@ const WordCloud = () => {
       });
 
       filteredRanks = filteredRanks.filter((obj) => !obj.data.every((val: any) => val.y == null));
-
       const words: any = {};
       const wordsTypesTemp: any = {};
       filteredRanks.forEach((obj) => {
         if (languagesData[obj.id]) {
           const factor = obj.data
-            .map((v) => (v.y !== null ? 21 - v.y : 0))
+            .map((v) => (v.y !== null ? v.occ : 0))
             .reduce((previousValue: any, currentValue: any) => previousValue + currentValue, 0);
           languagesData[obj.id].purposes.forEach((element: any) => {
             if (!words[element]) {
