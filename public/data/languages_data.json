@@ -1,0 +1,881 @@
+{
+  "1C Enterprise": {
+    "purposes": ["Application", "RAD", "Business", "General", "Web", "Mobile"],
+    "paradigms": [
+      "Imperative",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Object-based",
+      "Prototype-based programming"
+    ]
+  },
+  "ActionScript": {
+    "purposes": ["Application", "Client-side", "Web"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Event-driven"]
+  },
+  "Ada": {
+    "purposes": ["Application", "Embedded", "Realtime", "System"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Procedural",
+      "Generic",
+      "Concurrent",
+      " distributed"
+    ]
+  },
+  "Aldor": {
+    "purposes": ["Highly domain-specific", "Symbolic computing"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional"]
+  },
+  "ALGOL 58": { "purposes": ["Application"], "paradigms": ["Imperative"] },
+  "ALGOL 60": { "purposes": ["Application"], "paradigms": ["Imperative", "Procedural", "Generic"] },
+  "ALGOL 68": {
+    "purposes": ["Application"],
+    "paradigms": ["Imperative", "Functional", "Procedural", "Generic", "Concurrent"]
+  },
+  "Ateji PX": {
+    "purposes": ["Parallel application"],
+    "paradigms": ["Object-oriented", "Pi calculus"]
+  },
+  "APL": {
+    "purposes": ["Application", "Data processing"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Array-oriented",
+      "Tacit"
+    ]
+  },
+  "Assembly": {
+    "purposes": ["General"],
+    "paradigms": [
+      "Imperative",
+      "Any",
+      "Syntax is usually highly specific",
+      "Related to the target processor"
+    ]
+  },
+  "AutoHotkey": {
+    "purposes": ["GUI automation macros", "Highly domain-specific"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural", "Event-driven"]
+  },
+  "AutoIt": {
+    "purposes": ["GUI automation macros", "Highly domain-specific"],
+    "paradigms": ["Imperative", "Procedural", "Event-driven"]
+  },
+  "Ballerina": {
+    "purposes": ["Integration", "Agile", "Server-side", "General"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Event-driven",
+      "Concurrent",
+      "Transactional",
+      "Statically and strongly typed programming",
+      "Diagrammatic  visual programming"
+    ]
+  },
+  "Shell": { "purposes": ["Shell", "Scripting"], "paradigms": ["Imperative", "Procedural"] },
+  "BASIC": { "purposes": ["Application", "Education"], "paradigms": ["Imperative", "Procedural"] },
+  "BeanShell": {
+    "purposes": ["Application", "Scripting"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Reflective"]
+  },
+  "BLISS": { "purposes": ["System"], "paradigms": ["Procedural"] },
+  "BlitzMax": {
+    "purposes": ["Application", "Game"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural", "Reflective"]
+  },
+  "Boo": { "purposes": ["Application", "Game scripting"], "paradigms": ["Object-oriented"] },
+  "C": {
+    "purposes": ["Application", "System", " general purpose", "Low-level operations"],
+    "paradigms": ["Imperative", "Procedural"]
+  },
+  "C++": {
+    "purposes": ["Application", "System"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Procedural", "Generic"]
+  },
+  "C#": {
+    "purposes": [
+      "Application",
+      "RAD",
+      "Business",
+      "Client-side",
+      "General",
+      "Server-side",
+      "Web",
+      "Game programming"
+    ],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Structured",
+      "Concurrent"
+    ]
+  },
+  "Clarion": {
+    "purposes": ["General", "Business", "Web"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional"]
+  },
+  "Clean": { "purposes": ["General"], "paradigms": ["Functional", "Generic"] },
+  "Clojure": { "purposes": ["General"], "paradigms": ["Functional", "Concurrent"] },
+  "CLU": {
+    "purposes": ["General"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural", "Generic"]
+  },
+  "COBOL": {
+    "purposes": ["Application", "Business"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural"]
+  },
+  "Cobra": {
+    "purposes": ["Application", "Business", "General", "Web"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Generic", "Reflective"]
+  },
+  "ColdFusion": { "purposes": ["Web"], "paradigms": ["Object-oriented", "Procedural"] },
+  "Common Lisp": {
+    "purposes": ["General"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Extensible syntax",
+      "Array-oriented",
+      "Syntactic macros",
+      "Multiple dispatch",
+      "Concurrent"
+    ]
+  },
+  "COMAL 80": { "purposes": ["Education"], "paradigms": ["Imperative", "Procedural"] },
+  "Crystal": {
+    "purposes": ["General purpose"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Procedural", "Alpha stage"]
+  },
+  "Curry": {
+    "purposes": ["Application"],
+    "paradigms": ["Functional", "Generic", "Lazy evaluation", "Non-determinism"]
+  },
+  "Cython": {
+    "purposes": ["Application", "General", "Numerical computing"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Reflective", "Aspect-oriented"]
+  },
+  "D": {
+    "purposes": ["Application", "System"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Generative",
+      "Concurrent"
+    ]
+  },
+  "Dart": {
+    "purposes": ["Application", "Web", "Server-side", "Mobile", "IoT"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Event-driven",
+      "Structured"
+    ]
+  },
+  "Dylan": { "purposes": ["Application"], "paradigms": ["Object-oriented", "Functional"] },
+  "Eiffel": {
+    "purposes": ["General", "Application", "Business", "Client-side", "Server-side", "Web EWF"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Distributed scoop",
+      "Void-safe"
+    ]
+  },
+  "ELAN": {
+    "purposes": ["Education"],
+    "paradigms": ["Imperative", "Procedural", "Structured", "Stepwise refinement"]
+  },
+  "Elixir": {
+    "purposes": ["Application", "Distributed"],
+    "paradigms": ["Functional", "Reflective", "Event-driven", "Concurrent", "Distributed"]
+  },
+  "Erlang": {
+    "purposes": ["Application", "Distributed"],
+    "paradigms": ["Functional", "Reflective", "Event-driven", "Concurrent", "Distributed"]
+  },
+  "Euphoria": { "purposes": ["Application"], "paradigms": ["Procedural", "Reflective"] },
+  "Factor": {
+    "purposes": ["General"],
+    "paradigms": ["Imperative", "Functional", "Generic", "Reflective", "Stack-oriented"]
+  },
+  "FP": { "purposes": [], "paradigms": ["Functional"] },
+  "F#": {
+    "purposes": ["Application"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven"
+    ]
+  },
+  "Forth": { "purposes": ["General"], "paradigms": ["Imperative", "Functional", "Stack-oriented"] },
+  "Fortran": {
+    "purposes": ["Application", "Numerical computing"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Array-based",
+      "Vectorized",
+      "Concurrent",
+      "Native distributedshared-memory parallelism"
+    ]
+  },
+  "FreeBasic": {
+    "purposes": ["Application", "Numerical computing"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural", "Generic"]
+  },
+  "Gambas": {
+    "purposes": ["Application"],
+    "paradigms": ["Imperative", "Object-oriented", "Event-driven"]
+  },
+  "Game Maker Language": {
+    "purposes": ["Application", "Game programming"],
+    "paradigms": ["Imperative", "Object-oriented", "Event-driven"]
+  },
+  "GLBasic": {
+    "purposes": ["Application", "Games"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural", "Simple object-oriented"]
+  },
+  "Go": {
+    "purposes": ["Application", "Web", "Server-side"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Concurrent"
+    ]
+  },
+  "Gosu": {
+    "purposes": ["Application", "General", "Scripting", "Web"],
+    "paradigms": ["Imperative", "Object-oriented", "Generic", "Reflective"]
+  },
+  "GraphTalk": { "purposes": ["Application"], "paradigms": ["Object-oriented", "Logic"] },
+  "Groovy": {
+    "purposes": ["Application", "General", "Scripting", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Meta-programming"
+    ]
+  },
+  "Harbour": {
+    "purposes": ["Application", "Business", "Data processing", "General", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Declarative"
+    ]
+  },
+  "Haskell": {
+    "purposes": ["Application"],
+    "paradigms": ["Functional", "Generic", "Lazy evaluation"]
+  },
+  "Haxe": {
+    "purposes": ["Application", "General", "Web"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Generic", "Reflective"]
+  },
+  "HyperNext": {
+    "purposes": ["Application", "Education"],
+    "paradigms": ["Procedural", "Event-driven", "Weakly typed"]
+  },
+  "HyperTalk": {
+    "purposes": ["Application", "RAD", "General"],
+    "paradigms": ["Object-oriented", "Event-driven", "Weakly typed"]
+  },
+  "Io": {
+    "purposes": ["Application", "Host-driven scripting"],
+    "paradigms": ["Imperative", "Object-oriented"]
+  },
+  "IPL": { "purposes": ["General"], "paradigms": ["Functional"] },
+  "ISLISP": {
+    "purposes": ["General"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Generic"]
+  },
+  "J": {
+    "purposes": ["Data processing"],
+    "paradigms": ["Array-oriented", "Function-level", "Tacit"]
+  },
+  "JADE": {
+    "purposes": ["Application", "Distributed"],
+    "paradigms": ["Imperative", "Object-oriented"]
+  },
+  "Java": {
+    "purposes": [
+      "Application",
+      "Business",
+      "Client-side",
+      "General",
+      "Mobile development",
+      "Server-side",
+      "Web"
+    ],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Concurrent"
+    ]
+  },
+  "JavaScript": {
+    "purposes": ["Client-side", "Server-side", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Reflective",
+      "Event-driven",
+      "Prototype-based"
+    ]
+  },
+  "Joy": { "purposes": ["Research"], "paradigms": ["Functional", "Stack-oriented"] },
+  "Julia": {
+    "purposes": ["General", "Technical computing"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Multiple dispatch",
+      "Meta",
+      "Scalar and array-oriented",
+      "Parallel",
+      "Concurrent",
+      "Distributed cloud"
+    ]
+  },
+  "K": { "purposes": ["Data processing", "Business"], "paradigms": ["Array-oriented", "Tacit"] },
+  "Kotlin": {
+    "purposes": ["Application", "Mobile development", "Server-side", "Client-side", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven"
+    ]
+  },
+  "Ksh": {
+    "purposes": ["Shell", "Scripting"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Procedural",
+      "Several variants",
+      "Custom programmable",
+      "Dynamic loadable modules"
+    ]
+  },
+  "LabVIEW": {
+    "purposes": ["Application", "Industrial instrumentation-automation"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Event-driven",
+      "Dataflow",
+      "Visual"
+    ]
+  },
+  "Lisp": { "purposes": ["General"], "paradigms": ["Functional"] },
+  "LiveCode": {
+    "purposes": ["Application", "RAD", "General"],
+    "paradigms": ["Object-oriented", "Event-driven", "Weakly typed"]
+  },
+  "Logtalk": {
+    "purposes": ["Artificial intelligence", "Application"],
+    "paradigms": ["Object-oriented", "Reflective", "Event-driven", "Logic"]
+  },
+  "LSL": {
+    "purposes": ["Virtual worlds content scripting and animation"],
+    "paradigms": ["Imperative", "Procedural", "Event-driven", "Scripts exist in in-world objects"]
+  },
+  "Lua": {
+    "purposes": ["Application", "Embedded scripting"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Reflective",
+      "Aspect-oriented",
+      "Prototype-based"
+    ]
+  },
+  "Maple": {
+    "purposes": ["Symbolic computation", "Numerical computing"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Procedural", "Distributed"]
+  },
+  "Mathematica": {
+    "purposes": ["Symbolic language"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Logic",
+      "Distributed"
+    ]
+  },
+  "MATLAB": {
+    "purposes": ["Highly domain-specific", "Numerical computing"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural"]
+  },
+  "Modula-2": { "purposes": ["Application", "System"], "paradigms": ["Imperative", "Generic"] },
+  "Modula-3": {
+    "purposes": ["Application"],
+    "paradigms": ["Imperative", "Object-oriented", "Generic"]
+  },
+  "M": {
+    "purposes": ["General", "Application", "Databases"],
+    "paradigms": [
+      "Imperative",
+      "Procedural",
+      "Reflective",
+      "Concurrent",
+      "Multi-user",
+      "Nosql",
+      "Transaction processing"
+    ]
+  },
+  "Nim": {
+    "purposes": ["Application", "General", "Web", "Scripting", "System"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Multiple dispatch",
+      "Concurrent",
+      "Meta"
+    ]
+  },
+  "Oberon": {
+    "purposes": ["Application", "System"],
+    "paradigms": ["Imperative", "Object-oriented"]
+  },
+  "Object Pascal": {
+    "purposes": ["Application", "General", "Mobile app", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Structured"
+    ]
+  },
+  "Objective-C": {
+    "purposes": ["Application", "General"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural", "Reflective", "Concurrent"]
+  },
+  "OCaml": {
+    "purposes": ["Application", "General"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Procedural", "Generic"]
+  },
+  "Occam": {
+    "purposes": ["General"],
+    "paradigms": ["Imperative", "Procedural", "Concurrent", "Process-oriented"]
+  },
+  "Opa": {
+    "purposes": ["Web applications"],
+    "paradigms": ["Imperative", "Functional", "Generic", "Distributed"]
+  },
+  "OpenLisp": {
+    "purposes": ["General", "Embedded Lisp Engine"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Generic"]
+  },
+  "Oxygene": {
+    "purposes": ["Application"],
+    "paradigms": ["Imperative", "Object-oriented", "Generic"]
+  },
+  "Oz": {
+    "purposes": ["Application", "Distribution", "Education"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Concurrent", "Logic"]
+  },
+  "Pascal": { "purposes": ["Application", "Education"], "paradigms": ["Imperative", "Procedural"] },
+  "Perl": {
+    "purposes": ["Application", "Scripting", "Text processing", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective"
+    ]
+  },
+  "PHP": {
+    "purposes": ["Server-side", "Web application", "Web"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Procedural", "Reflective"]
+  },
+  "PL/I": {
+    "purposes": ["Application"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural"]
+  },
+  "Plus": {
+    "purposes": ["Application", "System development"],
+    "paradigms": ["Imperative", "Procedural"]
+  },
+  "PostScript": {
+    "purposes": ["Graphics", "Page description"],
+    "paradigms": ["Imperative", "Procedural", "Concatenative", "Stack-oriented"]
+  },
+  "PowerShell": {
+    "purposes": ["Administration", "Application", "General", "Scripting"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Reflective",
+      "Pipeline"
+    ]
+  },
+  "Prolog": {
+    "purposes": ["Application", "Artificial intelligence"],
+    "paradigms": ["Functional", "Procedural", "Reflective", "Logic", "Declarative"]
+  },
+  "PureBasic": { "purposes": ["Application"], "paradigms": ["Procedural"] },
+  "Python": {
+    "purposes": [
+      "Application",
+      "General",
+      "Web",
+      "Scripting",
+      "Artificial intelligence",
+      "Scientific computing"
+    ],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Aspect-oriented"
+    ]
+  },
+  "R": {
+    "purposes": ["Application", "Statistics"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Procedural", "Reflective"]
+  },
+  "Racket": {
+    "purposes": ["Education", "General", "Scripting"],
+    "paradigms": [
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Reflective",
+      "Modular",
+      "Logic",
+      "Meta"
+    ]
+  },
+  "Raku": {
+    "purposes": ["Scripting", "Text processing", "Glue"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Aspect-oriented",
+      "Array",
+      "Lazy evaluation",
+      "Multiple dispatch",
+      "Metaprogramming"
+    ]
+  },
+  "REALbasic": { "purposes": ["Application"], "paradigms": ["Procedural"] },
+  "Rebol": {
+    "purposes": ["Distributed"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Reflective",
+      "Event-driven",
+      "Dialected"
+    ]
+  },
+  "REXX": {
+    "purposes": ["Scripting"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural"]
+  },
+  "RPGLE": { "purposes": ["Application", "System"], "paradigms": ["Imperative", "Procedural"] },
+  "Ring": {
+    "purposes": ["Application"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Metaprogramming",
+      "Declarative",
+      "Natural-language"
+    ]
+  },
+  "Ruby": {
+    "purposes": ["Application", "Scripting", "Web"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Reflective", "Aspect-oriented"]
+  },
+  "Rust": {
+    "purposes": ["Application", "Server-side", "System", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Event-driven",
+      "Concurrent"
+    ]
+  },
+  "S": {
+    "purposes": ["Application", "Statistics"],
+    "paradigms": ["Imperative", "Object-oriented", "Functional", "Procedural"]
+  },
+  "S-Lang": {
+    "purposes": ["Application", "Numerical", "Scripting"],
+    "paradigms": ["Imperative", "Procedural"]
+  },
+  "Scala": {
+    "purposes": ["Application", "Distributed", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Generic",
+      "Reflective",
+      "Event-driven"
+    ]
+  },
+  "Scheme": {
+    "purposes": ["Education", "General"],
+    "paradigms": ["Functional", "Extensible syntax"]
+  },
+  "Seed7": {
+    "purposes": ["Application", "General", "Scripting", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Generic",
+      "Reflective",
+      "Multi-paradigm",
+      "Extensible",
+      "Structured"
+    ]
+  },
+  "Simula": {
+    "purposes": ["Education", "General"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Event-driven",
+      "Discrete event simulation",
+      "Multi-threaded quasi-parallel program execution"
+    ]
+  },
+  "Small Basic": {
+    "purposes": ["Application", "Education", "Games"],
+    "paradigms": ["Imperative", "Event-driven", "Component-oriented"]
+  },
+  "Smalltalk": {
+    "purposes": [
+      "Application",
+      "General",
+      "Business",
+      "Artificial intelligence",
+      "Education",
+      "Web"
+    ],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Reflective",
+      "Event-driven",
+      "Concurrent",
+      "Declarative"
+    ]
+  },
+  "SNOBOL": { "purposes": ["Text processing"], "paradigms": [] },
+  "Standard ML": {
+    "purposes": ["Application"],
+    "paradigms": ["Imperative", "Functional", "Generic"]
+  },
+  "Swift": {
+    "purposes": ["Application", "General"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Concurrent",
+      "Declarative",
+      "Protocol-oriented"
+    ]
+  },
+  "Tcl": {
+    "purposes": ["Application", "Scripting", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Reflective",
+      "Event-driven"
+    ]
+  },
+  "Visual Basic": {
+    "purposes": [
+      "Application",
+      "RAD",
+      "Education",
+      "Business",
+      "General",
+      "Includes VBA",
+      "Office automation"
+    ],
+    "paradigms": ["Imperative", "Object-oriented", "Generic", "Event-driven", "Component-oriented"]
+  },
+  "Visual Basic .NET": {
+    "purposes": ["Application", "RAD", "Education", "Web", "Business", "General"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Structured",
+      "Concurrent"
+    ]
+  },
+  "Visual FoxPro": {
+    "purposes": ["Application"],
+    "paradigms": ["Object-oriented", "Data-centric", "Logic"]
+  },
+  "Visual Prolog": {
+    "purposes": ["Application"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Event-driven",
+      "Declarative",
+      "Logic"
+    ]
+  },
+  "Wolfram Language": {
+    "purposes": ["Symbolic language"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Generic",
+      "Reflective",
+      "Event-driven",
+      "Logic",
+      "Distributed"
+    ]
+  },
+  "XL": { "purposes": [], "paradigms": ["Imperative", "Object-oriented", "Concept programming"] },
+  "Xojo": {
+    "purposes": ["Application", "RAD", "General", "Web"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural", "Reflective", "Event-driven"]
+  },
+  "XQuery": {
+    "purposes": ["Databases", "Data processing", "Scripting"],
+    "paradigms": ["Functional", "Tree-oriented"]
+  },
+  "Zeek": {
+    "purposes": ["Domain-specific", "Application"],
+    "paradigms": ["Imperative", "Event-driven"]
+  },
+  "Zsh": {
+    "purposes": ["Shell", "Scripting"],
+    "paradigms": ["Imperative", "Procedural", "Loadable modules"]
+  }
+}
