@@ -137,7 +137,6 @@ const LineCharts = () => {
         return a.quarter[0] - b.quarter[0];
       });
       processedData = groupBy(processedData, 'event_name');
-      console.log(processedData);
       const plotData = Object.keys(processedData).map((event) => {
         const x = (processedData as any)[event].quarter.map(
           (q: any, index: any) => `Q${q}/${(processedData as any)[event].year[index]}`
@@ -152,7 +151,6 @@ const LineCharts = () => {
           type: 'scatter'
         } as ChartData;
       });
-      console.log(plotData);
 
       setEventData(plotData);
     });
