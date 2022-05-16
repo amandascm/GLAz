@@ -92,12 +92,12 @@
   },
   "BLISS": { "purposes": ["System"], "paradigms": ["Procedural"] },
   "BlitzMax": {
-    "purposes": ["Application", "Game"],
+    "purposes": ["Application", "Games"],
     "paradigms": ["Imperative", "Object-oriented", "Procedural", "Reflective"]
   },
-  "Boo": { "purposes": ["Application", "Game scripting"], "paradigms": ["Object-oriented"] },
+  "Boo": { "purposes": ["Application", "Games"], "paradigms": ["Object-oriented"] },
   "C": {
-    "purposes": ["Application", "System", " general purpose", "Low-level operations"],
+    "purposes": ["Application", "System", "Low-level operations"],
     "paradigms": ["Imperative", "Procedural"]
   },
   "C++": {
@@ -113,7 +113,7 @@
       "General",
       "Server-side",
       "Web",
-      "Game programming"
+      "Games"
     ],
     "paradigms": [
       "Imperative",
@@ -165,7 +165,7 @@
   },
   "COMAL 80": { "purposes": ["Education"], "paradigms": ["Imperative", "Procedural"] },
   "Crystal": {
-    "purposes": ["General purpose"],
+    "purposes": ["General"],
     "paradigms": ["Imperative", "Object-oriented", "Functional", "Procedural", "Alpha stage"]
   },
   "Curry": {
@@ -269,7 +269,7 @@
     "paradigms": ["Imperative", "Object-oriented", "Event-driven"]
   },
   "Game Maker Language": {
-    "purposes": ["Application", "Game programming"],
+    "purposes": ["Application", "Games"],
     "paradigms": ["Imperative", "Object-oriented", "Event-driven"]
   },
   "GLBasic": {
@@ -286,6 +286,46 @@
       "Reflective",
       "Event-driven",
       "Concurrent"
+    ]
+  },
+  "HTML": {
+    "purposes": ["Application", "Web", "Markup"],
+    "paradigms": []
+  },
+  "CSS": {
+    "purposes": ["Application", "Web", "Style"],
+    "paradigms": []
+  },
+  "Makefile": {
+    "purposes": ["Scripting", "Compilation automation"],
+    "paradigms": []
+  },
+  "Dockerfile": {
+    "purposes": ["Scripting", "Compilation automation"],
+    "paradigms": []
+  },
+  "UnrealScript": {
+    "purposes": ["Games"],
+    "paradigms": ["Object-oriented"]
+  },
+  "Batchfile": {
+    "purposes": ["Administration", "General", "Scripting"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Reflective",
+      "Pipeline"
+    ]
+  },
+  "Awk": {
+    "purposes": ["Scripting", "Text processing"],
+    "paradigms": [
+      "Imperative",
+      "Procedural",
+      "Event-driven",
+      "Pipeline"
     ]
   },
   "Gosu": {
@@ -373,6 +413,18 @@
     ]
   },
   "JavaScript": {
+    "purposes": ["Client-side", "Server-side", "Web"],
+    "paradigms": [
+      "Imperative",
+      "Object-oriented",
+      "Functional",
+      "Procedural",
+      "Reflective",
+      "Event-driven",
+      "Prototype-based"
+    ]
+  },
+  "TypeScript": {
     "purposes": ["Client-side", "Server-side", "Web"],
     "paradigms": [
       "Imperative",
@@ -484,6 +536,10 @@
     "purposes": ["Highly domain-specific", "Numerical computing"],
     "paradigms": ["Imperative", "Object-oriented", "Procedural"]
   },
+  "Scilab": {
+    "purposes": ["Highly domain-specific", "Numerical computing"],
+    "paradigms": ["Imperative", "Object-oriented", "Procedural"]
+  },
   "Modula-2": { "purposes": ["Application", "System"], "paradigms": ["Imperative", "Generic"] },
   "Modula-3": {
     "purposes": ["Application"],
@@ -544,7 +600,7 @@
     "paradigms": ["Imperative", "Procedural", "Concurrent", "Process-oriented"]
   },
   "Opa": {
-    "purposes": ["Web applications"],
+    "purposes": ["Web", "Application"],
     "paradigms": ["Imperative", "Functional", "Generic", "Distributed"]
   },
   "OpenLisp": {
@@ -572,7 +628,7 @@
     ]
   },
   "PHP": {
-    "purposes": ["Server-side", "Web application", "Web"],
+    "purposes": ["Server-side", "Application", "Web"],
     "paradigms": ["Imperative", "Object-oriented", "Functional", "Procedural", "Reflective"]
   },
   "PL/I": {
@@ -653,6 +709,13 @@
       "Lazy evaluation",
       "Multiple dispatch",
       "Metaprogramming"
+    ]
+  },
+  "Nix": {
+    "purposes": ["Package management"],
+    "paradigms": [
+      "Lazy evaluation",
+      "Functional"
     ]
   },
   "REALbasic": { "purposes": ["Application"], "paradigms": ["Procedural"] },
