@@ -24,7 +24,7 @@
       "Procedural",
       "Generic",
       "Concurrent",
-      " distributed"
+      "Distributed"
     ]
   },
   "Aldor": {
@@ -58,10 +58,7 @@
   "Assembly": {
     "purposes": ["General"],
     "paradigms": [
-      "Imperative",
-      "Any",
-      "Syntax is usually highly specific",
-      "Related to the target processor"
+      "Imperative"
     ]
   },
   "AutoHotkey": {
@@ -83,7 +80,8 @@
       "Concurrent",
       "Transactional",
       "Statically and strongly typed programming",
-      "Diagrammatic  visual programming"
+      "Diagrammatic",
+      "Visual programming"
     ]
   },
   "Shell": { "purposes": ["Shell", "Scripting"], "paradigms": ["Imperative", "Procedural"] },
@@ -259,7 +257,7 @@
       "Array-based",
       "Vectorized",
       "Concurrent",
-      "Native distributedshared-memory parallelism"
+      "Native distributed"
     ]
   },
   "FreeBasic": {
@@ -748,7 +746,7 @@
       "Object-oriented",
       "Event-driven",
       "Discrete event simulation",
-      "Multi-threaded quasi-parallel program execution"
+      "Multi-threaded program execution"
     ]
   },
   "Small Basic": {
