@@ -188,10 +188,26 @@ const LineCharts = () => {
                   justifyContent: 'center',
                   alignItems: 'center',
                   flexDirection: 'column',
-                  paddingBottom: '25px'
+                  paddingBottom: '40px'
                 }}>
                 <h3>Commits</h3>
-                <Plot data={seriesData} layout={{ width: 700, height: 500 }} />
+                <Plot
+                  data={seriesData}
+                  layout={{
+                    width: 750,
+                    height: 500,
+                    xaxis: {
+                      title: {
+                        text: 'Time'
+                      }
+                    },
+                    yaxis: {
+                      title: {
+                        text: 'Commits'
+                      }
+                    }
+                  }}
+                />
               </div>
             </Carousel.Item>
             <Carousel.Item>
@@ -201,10 +217,26 @@ const LineCharts = () => {
                   justifyContent: 'center',
                   alignItems: 'center',
                   flexDirection: 'column',
-                  paddingBottom: '25px'
+                  paddingBottom: '40px'
                 }}>
                 <h3>PRs</h3>
-                <Plot data={seriesData} layout={{ width: 750, height: 500 }} />
+                <Plot
+                  data={seriesData}
+                  layout={{
+                    width: 750,
+                    height: 500,
+                    xaxis: {
+                      title: {
+                        text: 'Time'
+                      }
+                    },
+                    yaxis: {
+                      title: {
+                        text: 'Pull requests'
+                      }
+                    }
+                  }}
+                />
               </div>
             </Carousel.Item>
             <Carousel.Item>
@@ -214,10 +246,26 @@ const LineCharts = () => {
                   justifyContent: 'center',
                   alignItems: 'center',
                   flexDirection: 'column',
-                  paddingBottom: '25px'
+                  paddingBottom: '40px'
                 }}>
                 <h3>Repos</h3>
-                <Plot data={seriesData} layout={{ width: 750, height: 500 }} />
+                <Plot
+                  data={seriesData}
+                  layout={{
+                    width: 750,
+                    height: 500,
+                    xaxis: {
+                      title: {
+                        text: 'Time'
+                      }
+                    },
+                    yaxis: {
+                      title: {
+                        text: 'Repositories'
+                      }
+                    }
+                  }}
+                />
               </div>
             </Carousel.Item>
           </Carousel>
@@ -231,7 +279,23 @@ const LineCharts = () => {
             paddingBottom: '25px'
           }}>
           <h3>Events</h3>
-          <Plot data={eventData} layout={{ width: 600, height: 500 }} />
+          <Plot
+            data={eventData}
+            layout={{
+              width: 600,
+              height: 500,
+              xaxis: {
+                title: {
+                  text: 'Time'
+                }
+              },
+              yaxis: {
+                title: {
+                  text: 'Events (normalized)'
+                }
+              }
+            }}
+          />
         </div>
       </div>
     </div>
