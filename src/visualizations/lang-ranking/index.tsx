@@ -9,7 +9,7 @@ const PRS_INDEX = 1;
 const REPO_INDEX = 2;
 
 const MIN_YEAR = 2011;
-const MAX_YEAR = 2022;
+const MAX_YEAR = 2021;
 
 const chartContainer = {
   width: '70vw',
