@@ -173,7 +173,8 @@ const LineCharts = () => {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: '2fr 1fr'
+          gridTemplateColumns: '2fr 1fr',
+          width: '100%'
         }}>
         <div>
           <Carousel variant="dark" interval={null} activeIndex={index} onSelect={handleSelect}>
@@ -187,7 +188,7 @@ const LineCharts = () => {
                   paddingBottom: '25px'
                 }}>
                 <h3>Commits</h3>
-                <Plot data={seriesData} layout={{ width: 750, height: 500 }} />
+                <Plot data={seriesData} layout={{ width: 700, height: 500 }} />
               </div>
             </Carousel.Item>
             <Carousel.Item>

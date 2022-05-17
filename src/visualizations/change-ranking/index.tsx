@@ -225,66 +225,105 @@ const ChangeRanking = () => {
             width: '70%',
             display: 'flex',
             flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'stretch'
+            justifyContent: 'center',
+            alignItems: 'stretch',
+            flexWrap: 'wrap'
           }}>
-          <p style={{ paddingRight: '10px', verticalAlign: 'middle' }}>Year</p>
-          <Select
-            className="basic-single"
-            classNamePrefix="select"
-            onChange={(newYear) => {
-              if (newYear) setYear(newYear.value);
-            }}
-            defaultValue={{ value: year, label: String(year) }}
-            isDisabled={false}
-            isLoading={false}
-            isClearable={false}
-            isRtl={false}
-            isSearchable={true}
-            name="year"
-            options={yearSelectOptions}
-          />
-          <p style={{ paddingRight: '10px', verticalAlign: 'middle' }}>Quarter</p>
-          <Select
-            className="basic-single"
-            classNamePrefix="select"
-            onChange={(newQuarter) => {
-              if (newQuarter) setQuarter(newQuarter.value);
-              else setQuarter(null);
-            }}
-            defaultValue={null}
-            isDisabled={false}
-            isLoading={false}
-            isClearable={true}
-            isRtl={false}
-            isSearchable={true}
-            name="quarter"
-            options={quarterSelectOptions}
-          />
-          <p style={{ paddingRight: '10px', verticalAlign: 'middle' }}>Event type</p>
-          <Select
-            className="basic-single"
-            classNamePrefix="select"
-            onChange={(newEvent) => {
-              if (newEvent) setEvent(newEvent.value);
-            }}
-            defaultValue={datasetSelectOptions[0]}
-            isDisabled={false}
-            isLoading={false}
-            isClearable={false}
-            isRtl={false}
-            isSearchable={true}
-            name="event"
-            options={datasetSelectOptions}
-          />
-          <p style={{ paddingRight: '10px', verticalAlign: 'middle' }}>Minimum count</p>
-          <Slider
-            width={'300px'}
-            minValue={0}
-            maxValue={100000}
-            value={minimumCount}
-            label={(val: number) => String(val)}
-            onChange={sliderOnChange}></Slider>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '10px'
+            }}>
+            <p style={{ paddingRight: '10px', verticalAlign: 'middle', margin: 0 }}>Year</p>
+            <Select
+              className="basic-single"
+              classNamePrefix="select"
+              onChange={(newYear) => {
+                if (newYear) setYear(newYear.value);
+              }}
+              defaultValue={{ value: year, label: String(year) }}
+              isDisabled={false}
+              isLoading={false}
+              isClearable={false}
+              isRtl={false}
+              isSearchable={true}
+              name="year"
+              options={yearSelectOptions}
+            />
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '10px'
+            }}>
+            <p style={{ paddingRight: '10px', verticalAlign: 'middle', margin: 0 }}>Quarter</p>
+            <Select
+              className="basic-single"
+              classNamePrefix="select"
+              onChange={(newQuarter) => {
+                if (newQuarter) setQuarter(newQuarter.value);
+                else setQuarter(null);
+              }}
+              defaultValue={null}
+              isDisabled={false}
+              isLoading={false}
+              isClearable={true}
+              isRtl={false}
+              isSearchable={true}
+              name="quarter"
+              options={quarterSelectOptions}
+            />
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '10px'
+            }}>
+            <p style={{ paddingRight: '10px', verticalAlign: 'middle', margin: 0 }}>Event type</p>
+            <Select
+              className="basic-single"
+              classNamePrefix="select"
+              onChange={(newEvent) => {
+                if (newEvent) setEvent(newEvent.value);
+              }}
+              defaultValue={datasetSelectOptions[0]}
+              isDisabled={false}
+              isLoading={false}
+              isClearable={false}
+              isRtl={false}
+              isSearchable={true}
+              name="event"
+              options={datasetSelectOptions}
+            />
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '10px'
+            }}>
+            <p style={{ paddingRight: '10px', verticalAlign: 'middle', margin: 0 }}>
+              Minimum count
+            </p>
+            <Slider
+              width={'300px'}
+              minValue={0}
+              maxValue={100000}
+              value={minimumCount}
+              label={(val: number) => String(val)}
+              onChange={sliderOnChange}></Slider>
+          </div>
         </div>
         <div
           style={{
@@ -313,7 +352,7 @@ const ChangeRanking = () => {
               padding: '20px'
             }}>
             <Bar
-              width={700}
+              width={600}
               height={400}
               margin={{ top: 40, right: 80, bottom: 100, left: 80 }}
               data={tableData as any[]}
