@@ -178,7 +178,10 @@ const WordCloud = () => {
         padding: '20px'
       }}>
       <h2>Word Clouds</h2>
-      <p>
+      <p
+        style={{
+          width: '50%'
+        }}>
         A cloud of words related to the top 20 programming languages paradigms, types and purposes
         according to number of <b>commits</b>, <b>pull requests</b> and <b>repositories</b> along
         time.

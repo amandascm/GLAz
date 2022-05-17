@@ -106,7 +106,10 @@ const LangRanking = () => {
         padding: '20px'
       }}>
       <h2>Languages Ranking</h2>
-      <p>
+      <p
+        style={{
+          width: '40%'
+        }}>
         A ranking of programming languages according to number of <b>commits</b>,{' '}
         <b>pull requests</b> and <b>repositories</b> along time.
       </p>

@@ -166,7 +166,10 @@ const LineCharts = () => {
         padding: '20px'
       }}>
       <h2>Line charts</h2>
-      <p>
+      <p
+        style={{
+          width: '50%'
+        }}>
         Time series for programming languages according to total number of <b>commits</b>,{' '}
         <b>pull requests</b> and <b>repositories</b>.
       </p>

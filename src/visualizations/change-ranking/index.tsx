@@ -216,7 +216,10 @@ const ChangeRanking = () => {
           padding: '20px'
         }}>
         <h2>YoY Change Ranking</h2>
-        <p>
+        <p
+          style={{
+            width: '50%'
+          }}>
           A ranking table and a bar chart of programming languages according to the YoY Change for{' '}
           <b>commits</b>, <b>pull requests</b> and <b>repositories</b>.
         </p>
